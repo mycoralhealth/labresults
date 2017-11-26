@@ -27,11 +27,18 @@ view model =
             == Off
     then
         div []
-            [ button [ onClick OfferScan ] [ text "+*" ]
-            , button [] [ text "New Results" ]
-            , button [] [ text "View Posted Results" ]
-            , button [] [ text "Dismissed Results" ]
-            , button [ onClick Logout ] [ text "Logout" ]
+            [ div [] [ button [ onClick OfferScan ] [ text "+" ] ]
+            , br [] []
+            , button [ class "inactive" ] [ text "New Results" ]
+            , br [] []
+            , br [] []
+            , button [ class "inactive" ] [ text "View Posted Results" ]
+            , br [] []
+            , br [] []
+            , button [ class "inactive" ] [ text "Dismissed Results" ]
+            , br [] []
+            , br [] []
+            , div [ class "logout" ] [ button [ onClick Logout ] [ text "Logout" ] ]
             ]
     else if
         model.scanoffered
@@ -49,7 +56,9 @@ view model =
     then
         div []
             [ p [] [ text "Scan to allow your lab to send you results" ]
+            , br [] []
             , img [ src "images/qrcode.jpg" ] []
+            , br [] []
             , button [ onClick GetData ] [ text "Done" ]
             ]
     else if
@@ -67,11 +76,18 @@ view model =
             == Off
     then
         div []
-            [ button [] [ text "+" ]
-            , button [ onClick OfferNewResult ] [ text "New Results*" ]
-            , button [] [ text "View Posted Results" ]
-            , button [] [ text "Dismissed Results" ]
-            , button [ onClick Logout ] [ text "Logout" ]
+            [ div [] [ button [ class "inactive" ] [ text "+" ] ]
+            , br [] []
+            , button [ onClick OfferNewResult ] [ text "New Results" ]
+            , br [] []
+            , br [] []
+            , button [ class "inactive" ] [ text "View Posted Results" ]
+            , br [] []
+            , br [] []
+            , button [ class "inactive" ] [ text "Dismissed Results" ]
+            , br [] []
+            , br [] []
+            , div [ class "logout" ] [ button [ onClick Logout ] [ text "Logout" ] ]
             ]
     else if
         model.scanoffered
@@ -88,12 +104,15 @@ view model =
             == Off
     then
         div []
-            [ h1 [] [ text "Only you can see this" ]
+            [ h2 [] [ text "Only you can see this" ]
             , fullresult
-            , h1 [] [ text "Everyone can see this" ]
+            , br [] []
+            , h2 [] [ text "Everyone can see this" ]
             , partialresult
             , button [ onClick PostResult ] [ text "Post" ]
-            , button [ onClick DismissResult ] [ text "Don't Post" ]
+            , br [] []
+            , br [] []
+            , div [ class "dontpost" ] [ button [ onClick DismissResult ] [ text "Don't Post" ] ]
             ]
     else if
         model.scanoffered
@@ -110,11 +129,18 @@ view model =
             == Off
     then
         div []
-            [ button [] [ text "+" ]
-            , button [] [ text "New Results" ]
-            , button [ onClick ActivateViewer ] [ text "View Posted Results*" ]
-            , button [] [ text "Dismissed Results" ]
-            , button [ onClick Logout ] [ text "Logout" ]
+            [ div [] [ button [ class "inactive" ] [ text "+" ] ]
+            , br [] []
+            , button [ class "inactive" ] [ text "New Results" ]
+            , br [] []
+            , br [] []
+            , button [ onClick ActivateViewer ] [ text "View Posted Results" ]
+            , br [] []
+            , br [] []
+            , button [ class "inactive" ] [ text "Dismissed Results" ]
+            , br [] []
+            , br [] []
+            , div [ class "logout" ] [ button [ onClick Logout ] [ text "Logout" ] ]
             ]
     else if
         model.scanoffered
@@ -131,11 +157,18 @@ view model =
             == Off
     then
         div []
-            [ button [] [ text "+" ]
-            , button [] [ text "New Results" ]
-            , button [] [ text "View Posted Results" ]
-            , button [ onClick OfferNewResult ] [ text "Dismissed Results*" ]
-            , button [ onClick Logout ] [ text "Logout" ]
+            [ div [] [ button [ class "inactive" ] [ text "+" ] ]
+            , br [] []
+            , button [ class "inactive" ] [ text "New Results" ]
+            , br [] []
+            , br [] []
+            , button [ class "inactive" ] [ text "View Posted Results" ]
+            , br [] []
+            , br [] []
+            , button [ onClick OfferNewResult ] [ text "Dismissed Results" ]
+            , br [] []
+            , br [] []
+            , div [ class "logout" ] [ button [ onClick Logout ] [ text "Logout" ] ]
             ]
     else if
         model.scanoffered
@@ -159,27 +192,39 @@ view model =
             div []
                 [ h3 [] [ text "View as" ]
                 , select [ onInput ChangeView ] [ option [ value "You" ] [ text "You" ], option [ value "Public" ] [ text "Public" ] ]
+                , br [] []
                 , fullresult
+                , br [] []
                 , button [ onClick KillViewer ] [ text "Back" ]
                 ]
         else if model.viewer == Public then
             div []
                 [ h3 [] [ text "View as" ]
-                , select [ onInput ChangeView ] [ option [ value "You" ] [ text "You" ], option [ value "Public" ] [ text "Public" ] ]
+                , br [] []
+                , select [ onInput ChangeView ] [ option [ value "Public" ] [ text "Public" ], option [ value "You" ] [ text "You" ] ]
+                , br [] []
                 , partialresult
+                , br [] []
                 , button [ onClick KillViewer ] [ text "Back" ]
                 ]
         else
             div []
                 [ h3 [] [ text "View as" ]
-                , select [ onInput ChangeView ] [ option [ value "You" ] [ text "You" ], option [ value "Public" ] [ text "Public" ] ]
-                , fullresult
+                , br [] []
+                , select [ onInput ChangeView ] [ option [ value "Select" ] [ text "Select" ], option [ value "You" ] [ text "You" ], option [ value "Public" ] [ text "Public" ] ]
+                , br [] []
+                , br [] []
                 , button [ onClick KillViewer ] [ text "Back" ]
                 ]
     else
         div []
-            [ h1 [] [ text "Coral Health" ]
+            [ img [ src "images/logo.png" ] []
+            , br [] []
+            , br [] []
             , button [ onClick Login ] [ text "Start" ]
+            , br [] []
+            , br [] []
+            , h2 [] [ text "Lab Result Demo" ]
             ]
 
 
@@ -211,7 +256,7 @@ fullresult =
         [ table []
             [ tr []
                 [ th [] [ text "Biomarker" ]
-                , th [] [ text "Test Method" ]
+                , th [] [ text "Method" ]
                 , th [] [ text "Result" ]
                 ]
             , tr []
@@ -307,8 +352,10 @@ update msg model =
         ChangeView s ->
             if s == "Public" then
                 ( { model | viewer = Public }, Cmd.none )
-            else
+            else if s == "You" then
                 ( { model | viewer = Private }, Cmd.none )
+            else
+                ( { model | viewer = On }, Cmd.none )
 
 
 
