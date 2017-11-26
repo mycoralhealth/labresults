@@ -1,0 +1,133 @@
+@-ms-viewport {
+  width: device-width;
+}
+
+.logout {
+  position: fixed;
+  left: 50%;
+  bottom: 20px;
+  transform: translate(-50%, -50%);
+  margin: 0 auto;
+}
+
+.dontpost > button {
+	background: #4f4f4f;
+}
+
+.inactive {
+	background: #4f4f4f;
+}
+
+body {
+
+    height: 100%;
+    background: #F8F8F8;
+    font-family: 'Campton-LightDEMO', sans-serif;
+    font-weight: 300;
+    font-size: 17pt;
+    line-height: 1.75em;
+    color: #888;
+    text-align: center;
+    -webkit-text-stroke: 0.1px;
+}
+
+img {
+	text-align: center;
+	width: 100%;
+}
+
+
+/* Table */
+
+  table {
+    width: 100%;
+    text-align: left;
+    border: solid 3px #e6e6e6;
+
+  }
+
+
+      table > tr {
+    	border: solid 2px #e6e6e6;
+      }
+
+
+  select {
+    font-family: 'Campton-LightDEMO', sans-serif;
+    font-weight: 300;
+    font-size: 30pt;
+    line-height: 1.75em;
+    color: white;
+    text-align: center;
+    background-color: #01B3FC;
+    -webkit-text-stroke: 0.1px;
+  }
+
+  h1, h2, h3, h4, h5, h6, p {
+    color: #333;
+    margin: 0 0 1em 0;
+    font-family: 'Campton-BoldDEMO', sans-serif;
+    line-height: 1.5em;
+  }
+
+
+/* Button */
+
+  input[type="button"],
+  input[type="submit"],
+  input[type="reset"],
+  button,
+  .button {
+    -moz-transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    -ms-transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
+    -webkit-appearance: none;
+    position: relative;
+    display: inline-block;
+    background: #1cb495;
+    padding: 0.85em 3em 0.85em 3em;
+    border-radius: 0.25em;
+    cursor: pointer;
+    border: 0;
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+  }
+
+
+
+    input[type="button"].alt,
+    input[type="submit"].alt,
+    input[type="reset"].alt,
+    button.alt,
+    .button.alt {
+      color: inherit;
+      box-shadow: inset 0 0 0 1px #e6e6e6;
+      background: none;
+    }
+
+/* Mobile */
+
+  @media screen and (max-width: 736px) {
+
+    /* Basic */
+
+      body, input, textarea, select {
+        font-size: 11pt;
+      }
+
+      h1 {
+	      text-align: center;
+      }
+
+    /* Button */
+
+      .button {
+        width: 100%;
+        max-width: 300px;
+      }
+  }
+
+
