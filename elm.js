@@ -8681,7 +8681,7 @@ var _user$project$Main$view = function (model) {
 									},
 									{
 										ctor: '::',
-										_0: _elm_lang$html$Html$text('View Posted Results'),
+										_0: _elm_lang$html$Html$text('View Results'),
 										_1: {ctor: '[]'}
 									}),
 								_1: {
@@ -8880,7 +8880,7 @@ var _user$project$Main$view = function (model) {
 									},
 									{
 										ctor: '::',
-										_0: _elm_lang$html$Html$text('View Posted Results'),
+										_0: _elm_lang$html$Html$text('View Results'),
 										_1: {ctor: '[]'}
 									}),
 								_1: {
@@ -9120,7 +9120,7 @@ var _user$project$Main$view = function (model) {
 									},
 									{
 										ctor: '::',
-										_0: _elm_lang$html$Html$text('View Posted Results'),
+										_0: _elm_lang$html$Html$text('View Results'),
 										_1: {ctor: '[]'}
 									}),
 								_1: {
@@ -9265,7 +9265,7 @@ var _user$project$Main$view = function (model) {
 									},
 									{
 										ctor: '::',
-										_0: _elm_lang$html$Html$text('View Posted Results'),
+										_0: _elm_lang$html$Html$text('View Results'),
 										_1: {ctor: '[]'}
 									}),
 								_1: {
