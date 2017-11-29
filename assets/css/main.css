@@ -11,11 +11,14 @@
 }
 
 .dontpost > button {
-	background: #4f4f4f;
+	background: #EB1E23;
 }
 
 .inactive {
-	background: #4f4f4f;
+	background: #999;
+	color: #666;
+	cursor: not-allowed;
+	text-shadow: -1px -1px 0 rgba(0,0,0,0.3);
 }
 
 body {
