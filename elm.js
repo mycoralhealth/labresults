@@ -8718,7 +8718,7 @@ var _user$project$Main$view = function (model) {
 												},
 												{
 													ctor: '::',
-													_0: _elm_lang$html$Html$text('Dismissed Results'),
+													_0: _elm_lang$html$Html$text('Dismissed'),
 													_1: {ctor: '[]'}
 												}),
 											_1: {
@@ -8927,7 +8927,7 @@ var _user$project$Main$view = function (model) {
 													},
 													{
 														ctor: '::',
-														_0: _elm_lang$html$Html$text('Dismissed Results'),
+														_0: _elm_lang$html$Html$text('Dismissed'),
 														_1: {ctor: '[]'}
 													}),
 												_1: {
@@ -9178,7 +9178,7 @@ var _user$project$Main$view = function (model) {
 													},
 													{
 														ctor: '::',
-														_0: _elm_lang$html$Html$text('Dismissed Results'),
+														_0: _elm_lang$html$Html$text('Dismissed'),
 														_1: {ctor: '[]'}
 													}),
 												_1: {
@@ -9334,7 +9334,7 @@ var _user$project$Main$view = function (model) {
 													},
 													{
 														ctor: '::',
-														_0: _elm_lang$html$Html$text('Dismissed Results'),
+														_0: _elm_lang$html$Html$text('Dismissed'),
 														_1: {ctor: '[]'}
 													}),
 												_1: {
