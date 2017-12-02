@@ -44,6 +44,30 @@ img {
 	height: 50%;
 }
 
+i {
+	color: red;
+	animation: bounce 0.5s 10 alternate;
+	-webkit-animation: bounce 0.5s 10 alternate;
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-15px);
+  }
+}
+
+
+@-webkit-keyframes bounce {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-15px);
+  }
+}
 
 /* Table */
 

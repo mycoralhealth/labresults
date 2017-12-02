@@ -8625,18 +8625,29 @@ var _user$project$Main$view = function (model) {
 				{
 					ctor: '::',
 					_0: A2(
-						_elm_lang$html$Html$button,
+						_elm_lang$html$Html$i,
 						{
 							ctor: '::',
-							_0: _elm_lang$html$Html_Events$onClick(_user$project$Main$OfferScan),
+							_0: _elm_lang$html$Html_Attributes$class('fa fa-arrow-right'),
 							_1: {ctor: '[]'}
 						},
-						{
-							ctor: '::',
-							_0: _elm_lang$html$Html$text('+'),
-							_1: {ctor: '[]'}
-						}),
-					_1: {ctor: '[]'}
+						{ctor: '[]'}),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$button,
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html_Events$onClick(_user$project$Main$OfferScan),
+								_1: {ctor: '[]'}
+							},
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html$text('+'),
+								_1: {ctor: '[]'}
+							}),
+						_1: {ctor: '[]'}
+					}
 				}),
 			_1: {
 				ctor: '::',
@@ -8846,23 +8857,27 @@ var _user$project$Main$view = function (model) {
 				_1: {
 					ctor: '::',
 					_0: A2(
-						_elm_lang$html$Html$button,
+						_elm_lang$html$Html$i,
 						{
 							ctor: '::',
-							_0: _elm_lang$html$Html_Events$onClick(_user$project$Main$OfferNewResult),
+							_0: _elm_lang$html$Html_Attributes$class('fa fa-arrow-right'),
 							_1: {ctor: '[]'}
 						},
-						{
-							ctor: '::',
-							_0: _elm_lang$html$Html$text('New Results'),
-							_1: {ctor: '[]'}
-						}),
+						{ctor: '[]'}),
 					_1: {
 						ctor: '::',
 						_0: A2(
-							_elm_lang$html$Html$br,
-							{ctor: '[]'},
-							{ctor: '[]'}),
+							_elm_lang$html$Html$button,
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html_Events$onClick(_user$project$Main$OfferNewResult),
+								_1: {ctor: '[]'}
+							},
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html$text('New Results'),
+								_1: {ctor: '[]'}
+							}),
 						_1: {
 							ctor: '::',
 							_0: A2(
@@ -8872,23 +8887,23 @@ var _user$project$Main$view = function (model) {
 							_1: {
 								ctor: '::',
 								_0: A2(
-									_elm_lang$html$Html$button,
-									{
-										ctor: '::',
-										_0: _elm_lang$html$Html_Attributes$class('inactive'),
-										_1: {ctor: '[]'}
-									},
-									{
-										ctor: '::',
-										_0: _elm_lang$html$Html$text('View Results'),
-										_1: {ctor: '[]'}
-									}),
+									_elm_lang$html$Html$br,
+									{ctor: '[]'},
+									{ctor: '[]'}),
 								_1: {
 									ctor: '::',
 									_0: A2(
-										_elm_lang$html$Html$br,
-										{ctor: '[]'},
-										{ctor: '[]'}),
+										_elm_lang$html$Html$button,
+										{
+											ctor: '::',
+											_0: _elm_lang$html$Html_Attributes$class('inactive'),
+											_1: {ctor: '[]'}
+										},
+										{
+											ctor: '::',
+											_0: _elm_lang$html$Html$text('View Results'),
+											_1: {ctor: '[]'}
+										}),
 									_1: {
 										ctor: '::',
 										_0: A2(
@@ -8898,23 +8913,23 @@ var _user$project$Main$view = function (model) {
 										_1: {
 											ctor: '::',
 											_0: A2(
-												_elm_lang$html$Html$button,
-												{
-													ctor: '::',
-													_0: _elm_lang$html$Html_Attributes$class('inactive'),
-													_1: {ctor: '[]'}
-												},
-												{
-													ctor: '::',
-													_0: _elm_lang$html$Html$text('Dismissed Results'),
-													_1: {ctor: '[]'}
-												}),
+												_elm_lang$html$Html$br,
+												{ctor: '[]'},
+												{ctor: '[]'}),
 											_1: {
 												ctor: '::',
 												_0: A2(
-													_elm_lang$html$Html$br,
-													{ctor: '[]'},
-													{ctor: '[]'}),
+													_elm_lang$html$Html$button,
+													{
+														ctor: '::',
+														_0: _elm_lang$html$Html_Attributes$class('inactive'),
+														_1: {ctor: '[]'}
+													},
+													{
+														ctor: '::',
+														_0: _elm_lang$html$Html$text('Dismissed Results'),
+														_1: {ctor: '[]'}
+													}),
 												_1: {
 													ctor: '::',
 													_0: A2(
@@ -8924,29 +8939,36 @@ var _user$project$Main$view = function (model) {
 													_1: {
 														ctor: '::',
 														_0: A2(
-															_elm_lang$html$Html$div,
-															{
-																ctor: '::',
-																_0: _elm_lang$html$Html_Attributes$class('logout'),
-																_1: {ctor: '[]'}
-															},
-															{
-																ctor: '::',
-																_0: A2(
-																	_elm_lang$html$Html$button,
-																	{
-																		ctor: '::',
-																		_0: _elm_lang$html$Html_Events$onClick(_user$project$Main$Logout),
-																		_1: {ctor: '[]'}
-																	},
-																	{
-																		ctor: '::',
-																		_0: _elm_lang$html$Html$text('Logout'),
-																		_1: {ctor: '[]'}
-																	}),
-																_1: {ctor: '[]'}
-															}),
-														_1: {ctor: '[]'}
+															_elm_lang$html$Html$br,
+															{ctor: '[]'},
+															{ctor: '[]'}),
+														_1: {
+															ctor: '::',
+															_0: A2(
+																_elm_lang$html$Html$div,
+																{
+																	ctor: '::',
+																	_0: _elm_lang$html$Html_Attributes$class('logout'),
+																	_1: {ctor: '[]'}
+																},
+																{
+																	ctor: '::',
+																	_0: A2(
+																		_elm_lang$html$Html$button,
+																		{
+																			ctor: '::',
+																			_0: _elm_lang$html$Html_Events$onClick(_user$project$Main$Logout),
+																			_1: {ctor: '[]'}
+																		},
+																		{
+																			ctor: '::',
+																			_0: _elm_lang$html$Html$text('Logout'),
+																			_1: {ctor: '[]'}
+																		}),
+																	_1: {ctor: '[]'}
+																}),
+															_1: {ctor: '[]'}
+														}
 													}
 												}
 											}
@@ -9112,23 +9134,27 @@ var _user$project$Main$view = function (model) {
 							_1: {
 								ctor: '::',
 								_0: A2(
-									_elm_lang$html$Html$button,
+									_elm_lang$html$Html$i,
 									{
 										ctor: '::',
-										_0: _elm_lang$html$Html_Events$onClick(_user$project$Main$ActivateViewer),
+										_0: _elm_lang$html$Html_Attributes$class('fa fa-arrow-right'),
 										_1: {ctor: '[]'}
 									},
-									{
-										ctor: '::',
-										_0: _elm_lang$html$Html$text('View Results'),
-										_1: {ctor: '[]'}
-									}),
+									{ctor: '[]'}),
 								_1: {
 									ctor: '::',
 									_0: A2(
-										_elm_lang$html$Html$br,
-										{ctor: '[]'},
-										{ctor: '[]'}),
+										_elm_lang$html$Html$button,
+										{
+											ctor: '::',
+											_0: _elm_lang$html$Html_Events$onClick(_user$project$Main$ActivateViewer),
+											_1: {ctor: '[]'}
+										},
+										{
+											ctor: '::',
+											_0: _elm_lang$html$Html$text('View Results'),
+											_1: {ctor: '[]'}
+										}),
 									_1: {
 										ctor: '::',
 										_0: A2(
@@ -9138,23 +9164,23 @@ var _user$project$Main$view = function (model) {
 										_1: {
 											ctor: '::',
 											_0: A2(
-												_elm_lang$html$Html$button,
-												{
-													ctor: '::',
-													_0: _elm_lang$html$Html_Attributes$class('inactive'),
-													_1: {ctor: '[]'}
-												},
-												{
-													ctor: '::',
-													_0: _elm_lang$html$Html$text('Dismissed Results'),
-													_1: {ctor: '[]'}
-												}),
+												_elm_lang$html$Html$br,
+												{ctor: '[]'},
+												{ctor: '[]'}),
 											_1: {
 												ctor: '::',
 												_0: A2(
-													_elm_lang$html$Html$br,
-													{ctor: '[]'},
-													{ctor: '[]'}),
+													_elm_lang$html$Html$button,
+													{
+														ctor: '::',
+														_0: _elm_lang$html$Html_Attributes$class('inactive'),
+														_1: {ctor: '[]'}
+													},
+													{
+														ctor: '::',
+														_0: _elm_lang$html$Html$text('Dismissed Results'),
+														_1: {ctor: '[]'}
+													}),
 												_1: {
 													ctor: '::',
 													_0: A2(
@@ -9164,29 +9190,36 @@ var _user$project$Main$view = function (model) {
 													_1: {
 														ctor: '::',
 														_0: A2(
-															_elm_lang$html$Html$div,
-															{
-																ctor: '::',
-																_0: _elm_lang$html$Html_Attributes$class('logout'),
-																_1: {ctor: '[]'}
-															},
-															{
-																ctor: '::',
-																_0: A2(
-																	_elm_lang$html$Html$button,
-																	{
-																		ctor: '::',
-																		_0: _elm_lang$html$Html_Events$onClick(_user$project$Main$Logout),
-																		_1: {ctor: '[]'}
-																	},
-																	{
-																		ctor: '::',
-																		_0: _elm_lang$html$Html$text('Logout'),
-																		_1: {ctor: '[]'}
-																	}),
-																_1: {ctor: '[]'}
-															}),
-														_1: {ctor: '[]'}
+															_elm_lang$html$Html$br,
+															{ctor: '[]'},
+															{ctor: '[]'}),
+														_1: {
+															ctor: '::',
+															_0: A2(
+																_elm_lang$html$Html$div,
+																{
+																	ctor: '::',
+																	_0: _elm_lang$html$Html_Attributes$class('logout'),
+																	_1: {ctor: '[]'}
+																},
+																{
+																	ctor: '::',
+																	_0: A2(
+																		_elm_lang$html$Html$button,
+																		{
+																			ctor: '::',
+																			_0: _elm_lang$html$Html_Events$onClick(_user$project$Main$Logout),
+																			_1: {ctor: '[]'}
+																		},
+																		{
+																			ctor: '::',
+																			_0: _elm_lang$html$Html$text('Logout'),
+																			_1: {ctor: '[]'}
+																		}),
+																	_1: {ctor: '[]'}
+																}),
+															_1: {ctor: '[]'}
+														}
 													}
 												}
 											}
@@ -9283,23 +9316,27 @@ var _user$project$Main$view = function (model) {
 										_1: {
 											ctor: '::',
 											_0: A2(
-												_elm_lang$html$Html$button,
+												_elm_lang$html$Html$i,
 												{
 													ctor: '::',
-													_0: _elm_lang$html$Html_Events$onClick(_user$project$Main$OfferNewResult),
+													_0: _elm_lang$html$Html_Attributes$class('fa fa-arrow-right'),
 													_1: {ctor: '[]'}
 												},
-												{
-													ctor: '::',
-													_0: _elm_lang$html$Html$text('Dismissed Results'),
-													_1: {ctor: '[]'}
-												}),
+												{ctor: '[]'}),
 											_1: {
 												ctor: '::',
 												_0: A2(
-													_elm_lang$html$Html$br,
-													{ctor: '[]'},
-													{ctor: '[]'}),
+													_elm_lang$html$Html$button,
+													{
+														ctor: '::',
+														_0: _elm_lang$html$Html_Events$onClick(_user$project$Main$OfferNewResult),
+														_1: {ctor: '[]'}
+													},
+													{
+														ctor: '::',
+														_0: _elm_lang$html$Html$text('Dismissed Results'),
+														_1: {ctor: '[]'}
+													}),
 												_1: {
 													ctor: '::',
 													_0: A2(
@@ -9309,29 +9346,36 @@ var _user$project$Main$view = function (model) {
 													_1: {
 														ctor: '::',
 														_0: A2(
-															_elm_lang$html$Html$div,
-															{
-																ctor: '::',
-																_0: _elm_lang$html$Html_Attributes$class('logout'),
-																_1: {ctor: '[]'}
-															},
-															{
-																ctor: '::',
-																_0: A2(
-																	_elm_lang$html$Html$button,
-																	{
-																		ctor: '::',
-																		_0: _elm_lang$html$Html_Events$onClick(_user$project$Main$Logout),
-																		_1: {ctor: '[]'}
-																	},
-																	{
-																		ctor: '::',
-																		_0: _elm_lang$html$Html$text('Logout'),
-																		_1: {ctor: '[]'}
-																	}),
-																_1: {ctor: '[]'}
-															}),
-														_1: {ctor: '[]'}
+															_elm_lang$html$Html$br,
+															{ctor: '[]'},
+															{ctor: '[]'}),
+														_1: {
+															ctor: '::',
+															_0: A2(
+																_elm_lang$html$Html$div,
+																{
+																	ctor: '::',
+																	_0: _elm_lang$html$Html_Attributes$class('logout'),
+																	_1: {ctor: '[]'}
+																},
+																{
+																	ctor: '::',
+																	_0: A2(
+																		_elm_lang$html$Html$button,
+																		{
+																			ctor: '::',
+																			_0: _elm_lang$html$Html_Events$onClick(_user$project$Main$Logout),
+																			_1: {ctor: '[]'}
+																		},
+																		{
+																			ctor: '::',
+																			_0: _elm_lang$html$Html$text('Logout'),
+																			_1: {ctor: '[]'}
+																		}),
+																	_1: {ctor: '[]'}
+																}),
+															_1: {ctor: '[]'}
+														}
 													}
 												}
 											}
