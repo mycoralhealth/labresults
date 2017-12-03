@@ -62,6 +62,7 @@ view model =
             , br [] []
             , img [ src "images/qrcode.jpg" ] []
             , br [] []
+            , i [ class "fa fa-arrow-right" ] []
             , button [ onClick GetData ] [ text "Done" ]
             ]
     else if
@@ -116,7 +117,10 @@ view model =
             , button [ onClick PostResult ] [ text "Post" ]
             , br [] []
             , br [] []
-            , div [ class "dontpost" ] [ button [ onClick DismissResult ] [ text "Don't Post" ] ]
+            , div [ class "dontpost" ]
+                [ i [ class "fa fa-arrow-right" ] []
+                , button [ onClick DismissResult ] [ text "Don't Post" ]
+                ]
             ]
     else if
         model.scanoffered
@@ -124,28 +128,27 @@ view model =
             && model.gotdata
             == False
             && model.postedresult
-            == True
+            == False
             && model.dismissedresult
-            == False
+            == True
             && model.newresultqueried
-            == False
+            == True
             && model.viewer
             == Off
     then
         div []
-            [ div [] [ button [ class "inactive" ] [ text "+" ] ]
+            [ h2 [] [ text "Only you can see this" ]
+            , fullresult
             , br [] []
-            , button [ class "inactive" ] [ text "New Results" ]
-            , br [] []
-            , br [] []
+            , h2 [] [ text "Everyone can see this" ]
+            , partialresult
             , i [ class "fa fa-arrow-right" ] []
-            , button [ onClick ActivateViewer ] [ text "View Results" ]
+            , button [ onClick PostResult ] [ text "Post" ]
             , br [] []
             , br [] []
-            , button [ class "inactive" ] [ text "Dismissed" ]
-            , br [] []
-            , br [] []
-            , div [ class "logout" ] [ button [ onClick Logout ] [ text "Logout" ] ]
+            , div [ class "dontpost" ]
+                [ button [ onClick DismissResult ] [ text "Don't Post" ]
+                ]
             ]
     else if
         model.scanoffered
@@ -183,8 +186,66 @@ view model =
             == False
             && model.postedresult
             == True
-            && model.dismissedresult
+            && model.newresultqueried
             == False
+            && model.viewer
+            == Off
+            && model.viewed
+            == False
+    then
+        div []
+            [ div [] [ button [ class "inactive" ] [ text "+" ] ]
+            , br [] []
+            , button [ class "inactive" ] [ text "New Results" ]
+            , br [] []
+            , br [] []
+            , i [ class "fa fa-arrow-right" ] []
+            , button [ onClick ActivateViewer ] [ text "View Results" ]
+            , br [] []
+            , br [] []
+            , button [ class "inactive" ] [ text "Dismissed" ]
+            , br [] []
+            , br [] []
+            , div [ class "logout" ] [ button [ onClick Logout ] [ text "Logout" ] ]
+            ]
+    else if
+        model.scanoffered
+            == False
+            && model.gotdata
+            == False
+            && model.postedresult
+            == True
+            && model.newresultqueried
+            == False
+            && model.viewer
+            == Off
+            && model.viewed
+            == True
+    then
+        div []
+            [ div [] [ button [ class "inactive" ] [ text "+" ] ]
+            , br [] []
+            , button [ class "inactive" ] [ text "New Results" ]
+            , br [] []
+            , br [] []
+            , button [ onClick ActivateViewer ] [ text "View Results" ]
+            , br [] []
+            , br [] []
+            , button [ class "inactive" ] [ text "Dismissed" ]
+            , br [] []
+            , br [] []
+            , div [ class "logout" ]
+                [ i [ class "fa fa-arrow-right" ] []
+                , button [ onClick Logout ] [ text "Logout" ]
+                ]
+            ]
+    else if
+        model.scanoffered
+            == False
+            && model.gotdata
+            == False
+            && model.postedresult
+            == True
             && model.newresultqueried
             == False
             && model.viewer
@@ -201,6 +262,7 @@ view model =
                 , br [] []
                 , fullresult
                 , br [] []
+                , i [ class "fa fa-arrow-right" ] []
                 , button [ onClick KillViewer ] [ text "Back" ]
                 ]
         else if model.viewer == Public then
@@ -211,6 +273,7 @@ view model =
                 , br [] []
                 , partialresult
                 , br [] []
+                , i [ class "fa fa-arrow-right" ] []
                 , button [ onClick KillViewer ] [ text "Back" ]
                 ]
         else
@@ -220,6 +283,7 @@ view model =
                 , select [ onInput ChangeView ] [ option [ value "Select" ] [ text "Select" ], option [ value "You" ] [ text "You" ], option [ value "Public" ] [ text "Public" ] ]
                 , br [] []
                 , br [] []
+                , i [ class "fa fa-arrow-right" ] []
                 , button [ onClick KillViewer ] [ text "Back" ]
                 ]
     else
@@ -253,6 +317,7 @@ type alias Model =
     , dismissedresult : Bool
     , newresultqueried : Bool
     , viewer : Viewer
+    , viewed : Bool
     }
 
 
@@ -330,6 +395,7 @@ update msg model =
                 , dismissedresult = False
                 , newresultqueried = False
                 , viewer = Off
+                , viewed = False
               }
             , Cmd.none
             )
@@ -341,7 +407,7 @@ update msg model =
             ( { model | scanoffered = False, gotdata = True }, Cmd.none )
 
         OfferNewResult ->
-            ( { model | newresultqueried = True, gotdata = False, dismissedresult = False }, Cmd.none )
+            ( { model | newresultqueried = True, gotdata = False }, Cmd.none )
 
         PostResult ->
             ( { model | newresultqueried = False, postedresult = True }, Cmd.none )
@@ -350,7 +416,7 @@ update msg model =
             ( { model | newresultqueried = False, dismissedresult = True }, Cmd.none )
 
         ActivateViewer ->
-            ( { model | viewer = On }, Cmd.none )
+            ( { model | viewer = On, viewed = True }, Cmd.none )
 
         KillViewer ->
             ( { model | viewer = Off }, Cmd.none )
@@ -377,6 +443,7 @@ init =
       , dismissedresult = False
       , newresultqueried = False
       , viewer = Off
+      , viewed = False
       }
     , Cmd.none
     )

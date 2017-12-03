@@ -8489,16 +8489,16 @@ var _user$project$Main$fullresult = A2(
 			}),
 		_1: {ctor: '[]'}
 	});
-var _user$project$Main$Model = F7(
-	function (a, b, c, d, e, f, g) {
-		return {loggedin: a, scanoffered: b, gotdata: c, postedresult: d, dismissedresult: e, newresultqueried: f, viewer: g};
+var _user$project$Main$Model = F8(
+	function (a, b, c, d, e, f, g, h) {
+		return {loggedin: a, scanoffered: b, gotdata: c, postedresult: d, dismissedresult: e, newresultqueried: f, viewer: g, viewed: h};
 	});
 var _user$project$Main$Public = {ctor: 'Public'};
 var _user$project$Main$Private = {ctor: 'Private'};
 var _user$project$Main$Off = {ctor: 'Off'};
 var _user$project$Main$init = {
 	ctor: '_Tuple2',
-	_0: {loggedin: false, scanoffered: false, gotdata: false, postedresult: false, dismissedresult: false, newresultqueried: false, viewer: _user$project$Main$Off},
+	_0: {loggedin: false, scanoffered: false, gotdata: false, postedresult: false, dismissedresult: false, newresultqueried: false, viewer: _user$project$Main$Off, viewed: false},
 	_1: _elm_lang$core$Platform_Cmd$none
 };
 var _user$project$Main$On = {ctor: 'On'};
@@ -8519,7 +8519,7 @@ var _user$project$Main$update = F2(
 					ctor: '_Tuple2',
 					_0: _elm_lang$core$Native_Utils.update(
 						model,
-						{loggedin: false, scanoffered: false, gotdata: false, postedresult: false, dismissedresult: false, newresultqueried: false, viewer: _user$project$Main$Off}),
+						{loggedin: false, scanoffered: false, gotdata: false, postedresult: false, dismissedresult: false, newresultqueried: false, viewer: _user$project$Main$Off, viewed: false}),
 					_1: _elm_lang$core$Platform_Cmd$none
 				};
 			case 'OfferScan':
@@ -8543,7 +8543,7 @@ var _user$project$Main$update = F2(
 					ctor: '_Tuple2',
 					_0: _elm_lang$core$Native_Utils.update(
 						model,
-						{newresultqueried: true, gotdata: false, dismissedresult: false}),
+						{newresultqueried: true, gotdata: false}),
 					_1: _elm_lang$core$Platform_Cmd$none
 				};
 			case 'PostResult':
@@ -8567,7 +8567,7 @@ var _user$project$Main$update = F2(
 					ctor: '_Tuple2',
 					_0: _elm_lang$core$Native_Utils.update(
 						model,
-						{viewer: _user$project$Main$On}),
+						{viewer: _user$project$Main$On, viewed: true}),
 					_1: _elm_lang$core$Platform_Cmd$none
 				};
 			case 'KillViewer':
@@ -8808,18 +8808,29 @@ var _user$project$Main$view = function (model) {
 						_1: {
 							ctor: '::',
 							_0: A2(
-								_elm_lang$html$Html$button,
+								_elm_lang$html$Html$i,
 								{
 									ctor: '::',
-									_0: _elm_lang$html$Html_Events$onClick(_user$project$Main$GetData),
+									_0: _elm_lang$html$Html_Attributes$class('fa fa-arrow-right'),
 									_1: {ctor: '[]'}
 								},
-								{
-									ctor: '::',
-									_0: _elm_lang$html$Html$text('Done'),
-									_1: {ctor: '[]'}
-								}),
-							_1: {ctor: '[]'}
+								{ctor: '[]'}),
+							_1: {
+								ctor: '::',
+								_0: A2(
+									_elm_lang$html$Html$button,
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html_Events$onClick(_user$project$Main$GetData),
+										_1: {ctor: '[]'}
+									},
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html$text('Done'),
+										_1: {ctor: '[]'}
+									}),
+								_1: {ctor: '[]'}
+							}
 						}
 					}
 				}
@@ -9053,18 +9064,29 @@ var _user$project$Main$view = function (model) {
 												{
 													ctor: '::',
 													_0: A2(
-														_elm_lang$html$Html$button,
+														_elm_lang$html$Html$i,
 														{
 															ctor: '::',
-															_0: _elm_lang$html$Html_Events$onClick(_user$project$Main$DismissResult),
+															_0: _elm_lang$html$Html_Attributes$class('fa fa-arrow-right'),
 															_1: {ctor: '[]'}
 														},
-														{
-															ctor: '::',
-															_0: _elm_lang$html$Html$text('Don\'t Post'),
-															_1: {ctor: '[]'}
-														}),
-													_1: {ctor: '[]'}
+														{ctor: '[]'}),
+													_1: {
+														ctor: '::',
+														_0: A2(
+															_elm_lang$html$Html$button,
+															{
+																ctor: '::',
+																_0: _elm_lang$html$Html_Events$onClick(_user$project$Main$DismissResult),
+																_1: {ctor: '[]'}
+															},
+															{
+																ctor: '::',
+																_0: _elm_lang$html$Html$text('Don\'t Post'),
+																_1: {ctor: '[]'}
+															}),
+														_1: {ctor: '[]'}
+													}
 												}),
 											_1: {ctor: '[]'}
 										}
@@ -9075,62 +9097,41 @@ var _user$project$Main$view = function (model) {
 					}
 				}
 			}
-		}) : ((_elm_lang$core$Native_Utils.eq(model.scanoffered, false) && (_elm_lang$core$Native_Utils.eq(model.gotdata, false) && (_elm_lang$core$Native_Utils.eq(model.postedresult, true) && (_elm_lang$core$Native_Utils.eq(model.dismissedresult, false) && (_elm_lang$core$Native_Utils.eq(model.newresultqueried, false) && _elm_lang$core$Native_Utils.eq(model.viewer, _user$project$Main$Off)))))) ? A2(
+		}) : ((_elm_lang$core$Native_Utils.eq(model.scanoffered, false) && (_elm_lang$core$Native_Utils.eq(model.gotdata, false) && (_elm_lang$core$Native_Utils.eq(model.postedresult, false) && (_elm_lang$core$Native_Utils.eq(model.dismissedresult, true) && (_elm_lang$core$Native_Utils.eq(model.newresultqueried, true) && _elm_lang$core$Native_Utils.eq(model.viewer, _user$project$Main$Off)))))) ? A2(
 		_elm_lang$html$Html$div,
 		{ctor: '[]'},
 		{
 			ctor: '::',
 			_0: A2(
-				_elm_lang$html$Html$div,
+				_elm_lang$html$Html$h2,
 				{ctor: '[]'},
 				{
 					ctor: '::',
-					_0: A2(
-						_elm_lang$html$Html$button,
-						{
-							ctor: '::',
-							_0: _elm_lang$html$Html_Attributes$class('inactive'),
-							_1: {ctor: '[]'}
-						},
-						{
-							ctor: '::',
-							_0: _elm_lang$html$Html$text('+'),
-							_1: {ctor: '[]'}
-						}),
+					_0: _elm_lang$html$Html$text('Only you can see this'),
 					_1: {ctor: '[]'}
 				}),
 			_1: {
 				ctor: '::',
-				_0: A2(
-					_elm_lang$html$Html$br,
-					{ctor: '[]'},
-					{ctor: '[]'}),
+				_0: _user$project$Main$fullresult,
 				_1: {
 					ctor: '::',
 					_0: A2(
-						_elm_lang$html$Html$button,
-						{
-							ctor: '::',
-							_0: _elm_lang$html$Html_Attributes$class('inactive'),
-							_1: {ctor: '[]'}
-						},
-						{
-							ctor: '::',
-							_0: _elm_lang$html$Html$text('New Results'),
-							_1: {ctor: '[]'}
-						}),
+						_elm_lang$html$Html$br,
+						{ctor: '[]'},
+						{ctor: '[]'}),
 					_1: {
 						ctor: '::',
 						_0: A2(
-							_elm_lang$html$Html$br,
+							_elm_lang$html$Html$h2,
 							{ctor: '[]'},
-							{ctor: '[]'}),
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html$text('Everyone can see this'),
+								_1: {ctor: '[]'}
+							}),
 						_1: {
 							ctor: '::',
-							_0: A2(
-								_elm_lang$html$Html$br,
-								{ctor: '[]'},
-								{ctor: '[]'}),
+							_0: _user$project$Main$partialresult,
 							_1: {
 								ctor: '::',
 								_0: A2(
@@ -9147,12 +9148,12 @@ var _user$project$Main$view = function (model) {
 										_elm_lang$html$Html$button,
 										{
 											ctor: '::',
-											_0: _elm_lang$html$Html_Events$onClick(_user$project$Main$ActivateViewer),
+											_0: _elm_lang$html$Html_Events$onClick(_user$project$Main$PostResult),
 											_1: {ctor: '[]'}
 										},
 										{
 											ctor: '::',
-											_0: _elm_lang$html$Html$text('View Results'),
+											_0: _elm_lang$html$Html$text('Post'),
 											_1: {ctor: '[]'}
 										}),
 									_1: {
@@ -9170,58 +9171,29 @@ var _user$project$Main$view = function (model) {
 											_1: {
 												ctor: '::',
 												_0: A2(
-													_elm_lang$html$Html$button,
+													_elm_lang$html$Html$div,
 													{
 														ctor: '::',
-														_0: _elm_lang$html$Html_Attributes$class('inactive'),
+														_0: _elm_lang$html$Html_Attributes$class('dontpost'),
 														_1: {ctor: '[]'}
 													},
 													{
 														ctor: '::',
-														_0: _elm_lang$html$Html$text('Dismissed'),
+														_0: A2(
+															_elm_lang$html$Html$button,
+															{
+																ctor: '::',
+																_0: _elm_lang$html$Html_Events$onClick(_user$project$Main$DismissResult),
+																_1: {ctor: '[]'}
+															},
+															{
+																ctor: '::',
+																_0: _elm_lang$html$Html$text('Don\'t Post'),
+																_1: {ctor: '[]'}
+															}),
 														_1: {ctor: '[]'}
 													}),
-												_1: {
-													ctor: '::',
-													_0: A2(
-														_elm_lang$html$Html$br,
-														{ctor: '[]'},
-														{ctor: '[]'}),
-													_1: {
-														ctor: '::',
-														_0: A2(
-															_elm_lang$html$Html$br,
-															{ctor: '[]'},
-															{ctor: '[]'}),
-														_1: {
-															ctor: '::',
-															_0: A2(
-																_elm_lang$html$Html$div,
-																{
-																	ctor: '::',
-																	_0: _elm_lang$html$Html_Attributes$class('logout'),
-																	_1: {ctor: '[]'}
-																},
-																{
-																	ctor: '::',
-																	_0: A2(
-																		_elm_lang$html$Html$button,
-																		{
-																			ctor: '::',
-																			_0: _elm_lang$html$Html_Events$onClick(_user$project$Main$Logout),
-																			_1: {ctor: '[]'}
-																		},
-																		{
-																			ctor: '::',
-																			_0: _elm_lang$html$Html$text('Logout'),
-																			_1: {ctor: '[]'}
-																		}),
-																	_1: {ctor: '[]'}
-																}),
-															_1: {ctor: '[]'}
-														}
-													}
-												}
+												_1: {ctor: '[]'}
 											}
 										}
 									}
@@ -9387,7 +9359,319 @@ var _user$project$Main$view = function (model) {
 					}
 				}
 			}
-		}) : (((_elm_lang$core$Native_Utils.eq(model.scanoffered, false) && (_elm_lang$core$Native_Utils.eq(model.gotdata, false) && (_elm_lang$core$Native_Utils.eq(model.postedresult, true) && (_elm_lang$core$Native_Utils.eq(model.dismissedresult, false) && (_elm_lang$core$Native_Utils.eq(model.newresultqueried, false) && _elm_lang$core$Native_Utils.eq(model.viewer, _user$project$Main$On)))))) || (_elm_lang$core$Native_Utils.eq(model.viewer, _user$project$Main$Public) || _elm_lang$core$Native_Utils.eq(model.viewer, _user$project$Main$Private))) ? (_elm_lang$core$Native_Utils.eq(model.viewer, _user$project$Main$Private) ? A2(
+		}) : ((_elm_lang$core$Native_Utils.eq(model.scanoffered, false) && (_elm_lang$core$Native_Utils.eq(model.gotdata, false) && (_elm_lang$core$Native_Utils.eq(model.postedresult, true) && (_elm_lang$core$Native_Utils.eq(model.newresultqueried, false) && (_elm_lang$core$Native_Utils.eq(model.viewer, _user$project$Main$Off) && _elm_lang$core$Native_Utils.eq(model.viewed, false)))))) ? A2(
+		_elm_lang$html$Html$div,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: A2(
+				_elm_lang$html$Html$div,
+				{ctor: '[]'},
+				{
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$button,
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$class('inactive'),
+							_1: {ctor: '[]'}
+						},
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html$text('+'),
+							_1: {ctor: '[]'}
+						}),
+					_1: {ctor: '[]'}
+				}),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$br,
+					{ctor: '[]'},
+					{ctor: '[]'}),
+				_1: {
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$button,
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$class('inactive'),
+							_1: {ctor: '[]'}
+						},
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html$text('New Results'),
+							_1: {ctor: '[]'}
+						}),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$br,
+							{ctor: '[]'},
+							{ctor: '[]'}),
+						_1: {
+							ctor: '::',
+							_0: A2(
+								_elm_lang$html$Html$br,
+								{ctor: '[]'},
+								{ctor: '[]'}),
+							_1: {
+								ctor: '::',
+								_0: A2(
+									_elm_lang$html$Html$i,
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html_Attributes$class('fa fa-arrow-right'),
+										_1: {ctor: '[]'}
+									},
+									{ctor: '[]'}),
+								_1: {
+									ctor: '::',
+									_0: A2(
+										_elm_lang$html$Html$button,
+										{
+											ctor: '::',
+											_0: _elm_lang$html$Html_Events$onClick(_user$project$Main$ActivateViewer),
+											_1: {ctor: '[]'}
+										},
+										{
+											ctor: '::',
+											_0: _elm_lang$html$Html$text('View Results'),
+											_1: {ctor: '[]'}
+										}),
+									_1: {
+										ctor: '::',
+										_0: A2(
+											_elm_lang$html$Html$br,
+											{ctor: '[]'},
+											{ctor: '[]'}),
+										_1: {
+											ctor: '::',
+											_0: A2(
+												_elm_lang$html$Html$br,
+												{ctor: '[]'},
+												{ctor: '[]'}),
+											_1: {
+												ctor: '::',
+												_0: A2(
+													_elm_lang$html$Html$button,
+													{
+														ctor: '::',
+														_0: _elm_lang$html$Html_Attributes$class('inactive'),
+														_1: {ctor: '[]'}
+													},
+													{
+														ctor: '::',
+														_0: _elm_lang$html$Html$text('Dismissed'),
+														_1: {ctor: '[]'}
+													}),
+												_1: {
+													ctor: '::',
+													_0: A2(
+														_elm_lang$html$Html$br,
+														{ctor: '[]'},
+														{ctor: '[]'}),
+													_1: {
+														ctor: '::',
+														_0: A2(
+															_elm_lang$html$Html$br,
+															{ctor: '[]'},
+															{ctor: '[]'}),
+														_1: {
+															ctor: '::',
+															_0: A2(
+																_elm_lang$html$Html$div,
+																{
+																	ctor: '::',
+																	_0: _elm_lang$html$Html_Attributes$class('logout'),
+																	_1: {ctor: '[]'}
+																},
+																{
+																	ctor: '::',
+																	_0: A2(
+																		_elm_lang$html$Html$button,
+																		{
+																			ctor: '::',
+																			_0: _elm_lang$html$Html_Events$onClick(_user$project$Main$Logout),
+																			_1: {ctor: '[]'}
+																		},
+																		{
+																			ctor: '::',
+																			_0: _elm_lang$html$Html$text('Logout'),
+																			_1: {ctor: '[]'}
+																		}),
+																	_1: {ctor: '[]'}
+																}),
+															_1: {ctor: '[]'}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}) : ((_elm_lang$core$Native_Utils.eq(model.scanoffered, false) && (_elm_lang$core$Native_Utils.eq(model.gotdata, false) && (_elm_lang$core$Native_Utils.eq(model.postedresult, true) && (_elm_lang$core$Native_Utils.eq(model.newresultqueried, false) && (_elm_lang$core$Native_Utils.eq(model.viewer, _user$project$Main$Off) && _elm_lang$core$Native_Utils.eq(model.viewed, true)))))) ? A2(
+		_elm_lang$html$Html$div,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: A2(
+				_elm_lang$html$Html$div,
+				{ctor: '[]'},
+				{
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$button,
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$class('inactive'),
+							_1: {ctor: '[]'}
+						},
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html$text('+'),
+							_1: {ctor: '[]'}
+						}),
+					_1: {ctor: '[]'}
+				}),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$br,
+					{ctor: '[]'},
+					{ctor: '[]'}),
+				_1: {
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$button,
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$class('inactive'),
+							_1: {ctor: '[]'}
+						},
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html$text('New Results'),
+							_1: {ctor: '[]'}
+						}),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$br,
+							{ctor: '[]'},
+							{ctor: '[]'}),
+						_1: {
+							ctor: '::',
+							_0: A2(
+								_elm_lang$html$Html$br,
+								{ctor: '[]'},
+								{ctor: '[]'}),
+							_1: {
+								ctor: '::',
+								_0: A2(
+									_elm_lang$html$Html$button,
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html_Events$onClick(_user$project$Main$ActivateViewer),
+										_1: {ctor: '[]'}
+									},
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html$text('View Results'),
+										_1: {ctor: '[]'}
+									}),
+								_1: {
+									ctor: '::',
+									_0: A2(
+										_elm_lang$html$Html$br,
+										{ctor: '[]'},
+										{ctor: '[]'}),
+									_1: {
+										ctor: '::',
+										_0: A2(
+											_elm_lang$html$Html$br,
+											{ctor: '[]'},
+											{ctor: '[]'}),
+										_1: {
+											ctor: '::',
+											_0: A2(
+												_elm_lang$html$Html$button,
+												{
+													ctor: '::',
+													_0: _elm_lang$html$Html_Attributes$class('inactive'),
+													_1: {ctor: '[]'}
+												},
+												{
+													ctor: '::',
+													_0: _elm_lang$html$Html$text('Dismissed'),
+													_1: {ctor: '[]'}
+												}),
+											_1: {
+												ctor: '::',
+												_0: A2(
+													_elm_lang$html$Html$br,
+													{ctor: '[]'},
+													{ctor: '[]'}),
+												_1: {
+													ctor: '::',
+													_0: A2(
+														_elm_lang$html$Html$br,
+														{ctor: '[]'},
+														{ctor: '[]'}),
+													_1: {
+														ctor: '::',
+														_0: A2(
+															_elm_lang$html$Html$div,
+															{
+																ctor: '::',
+																_0: _elm_lang$html$Html_Attributes$class('logout'),
+																_1: {ctor: '[]'}
+															},
+															{
+																ctor: '::',
+																_0: A2(
+																	_elm_lang$html$Html$i,
+																	{
+																		ctor: '::',
+																		_0: _elm_lang$html$Html_Attributes$class('fa fa-arrow-right'),
+																		_1: {ctor: '[]'}
+																	},
+																	{ctor: '[]'}),
+																_1: {
+																	ctor: '::',
+																	_0: A2(
+																		_elm_lang$html$Html$button,
+																		{
+																			ctor: '::',
+																			_0: _elm_lang$html$Html_Events$onClick(_user$project$Main$Logout),
+																			_1: {ctor: '[]'}
+																		},
+																		{
+																			ctor: '::',
+																			_0: _elm_lang$html$Html$text('Logout'),
+																			_1: {ctor: '[]'}
+																		}),
+																	_1: {ctor: '[]'}
+																}
+															}),
+														_1: {ctor: '[]'}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}) : (((_elm_lang$core$Native_Utils.eq(model.scanoffered, false) && (_elm_lang$core$Native_Utils.eq(model.gotdata, false) && (_elm_lang$core$Native_Utils.eq(model.postedresult, true) && (_elm_lang$core$Native_Utils.eq(model.newresultqueried, false) && _elm_lang$core$Native_Utils.eq(model.viewer, _user$project$Main$On))))) || (_elm_lang$core$Native_Utils.eq(model.viewer, _user$project$Main$Public) || _elm_lang$core$Native_Utils.eq(model.viewer, _user$project$Main$Private))) ? (_elm_lang$core$Native_Utils.eq(model.viewer, _user$project$Main$Private) ? A2(
 		_elm_lang$html$Html$div,
 		{ctor: '[]'},
 		{
@@ -9458,18 +9742,29 @@ var _user$project$Main$view = function (model) {
 							_1: {
 								ctor: '::',
 								_0: A2(
-									_elm_lang$html$Html$button,
+									_elm_lang$html$Html$i,
 									{
 										ctor: '::',
-										_0: _elm_lang$html$Html_Events$onClick(_user$project$Main$KillViewer),
+										_0: _elm_lang$html$Html_Attributes$class('fa fa-arrow-right'),
 										_1: {ctor: '[]'}
 									},
-									{
-										ctor: '::',
-										_0: _elm_lang$html$Html$text('Back'),
-										_1: {ctor: '[]'}
-									}),
-								_1: {ctor: '[]'}
+									{ctor: '[]'}),
+								_1: {
+									ctor: '::',
+									_0: A2(
+										_elm_lang$html$Html$button,
+										{
+											ctor: '::',
+											_0: _elm_lang$html$Html_Events$onClick(_user$project$Main$KillViewer),
+											_1: {ctor: '[]'}
+										},
+										{
+											ctor: '::',
+											_0: _elm_lang$html$Html$text('Back'),
+											_1: {ctor: '[]'}
+										}),
+									_1: {ctor: '[]'}
+								}
 							}
 						}
 					}
@@ -9552,18 +9847,29 @@ var _user$project$Main$view = function (model) {
 								_1: {
 									ctor: '::',
 									_0: A2(
-										_elm_lang$html$Html$button,
+										_elm_lang$html$Html$i,
 										{
 											ctor: '::',
-											_0: _elm_lang$html$Html_Events$onClick(_user$project$Main$KillViewer),
+											_0: _elm_lang$html$Html_Attributes$class('fa fa-arrow-right'),
 											_1: {ctor: '[]'}
 										},
-										{
-											ctor: '::',
-											_0: _elm_lang$html$Html$text('Back'),
-											_1: {ctor: '[]'}
-										}),
-									_1: {ctor: '[]'}
+										{ctor: '[]'}),
+									_1: {
+										ctor: '::',
+										_0: A2(
+											_elm_lang$html$Html$button,
+											{
+												ctor: '::',
+												_0: _elm_lang$html$Html_Events$onClick(_user$project$Main$KillViewer),
+												_1: {ctor: '[]'}
+											},
+											{
+												ctor: '::',
+												_0: _elm_lang$html$Html$text('Back'),
+												_1: {ctor: '[]'}
+											}),
+										_1: {ctor: '[]'}
+									}
 								}
 							}
 						}
@@ -9659,18 +9965,29 @@ var _user$project$Main$view = function (model) {
 							_1: {
 								ctor: '::',
 								_0: A2(
-									_elm_lang$html$Html$button,
+									_elm_lang$html$Html$i,
 									{
 										ctor: '::',
-										_0: _elm_lang$html$Html_Events$onClick(_user$project$Main$KillViewer),
+										_0: _elm_lang$html$Html_Attributes$class('fa fa-arrow-right'),
 										_1: {ctor: '[]'}
 									},
-									{
-										ctor: '::',
-										_0: _elm_lang$html$Html$text('Back'),
-										_1: {ctor: '[]'}
-									}),
-								_1: {ctor: '[]'}
+									{ctor: '[]'}),
+								_1: {
+									ctor: '::',
+									_0: A2(
+										_elm_lang$html$Html$button,
+										{
+											ctor: '::',
+											_0: _elm_lang$html$Html_Events$onClick(_user$project$Main$KillViewer),
+											_1: {ctor: '[]'}
+										},
+										{
+											ctor: '::',
+											_0: _elm_lang$html$Html$text('Back'),
+											_1: {ctor: '[]'}
+										}),
+									_1: {ctor: '[]'}
+								}
 							}
 						}
 					}
@@ -9744,7 +10061,7 @@ var _user$project$Main$view = function (model) {
 					}
 				}
 			}
-		})))))));
+		})))))))));
 };
 var _user$project$Main$main = _elm_lang$html$Html$program(
 	{init: _user$project$Main$init, view: _user$project$Main$view, update: _user$project$Main$update, subscriptions: _user$project$Main$subscriptions})();

@@ -2,13 +2,6 @@
   width: device-width;
 }
 
-.logout {
-  position: fixed;
-  left: 50%;
-  bottom: 5px;
-  transform: translate(-50%, -50%);
-  margin: 0 auto;
-}
 
 .dontpost > button {
 	background: #EB1E23;
