@@ -8776,7 +8776,7 @@ var _user$project$Main$view = function (model) {
 		{
 			ctor: '::',
 			_0: A2(
-				_elm_lang$html$Html$p,
+				_elm_lang$html$Html$h3,
 				{ctor: '[]'},
 				{
 					ctor: '::',
@@ -9107,7 +9107,7 @@ var _user$project$Main$view = function (model) {
 				{ctor: '[]'},
 				{
 					ctor: '::',
-					_0: _elm_lang$html$Html$text('Only you can see this'),
+					_0: _elm_lang$html$Html$text('Only you can see this:'),
 					_1: {ctor: '[]'}
 				}),
 			_1: {
@@ -9126,7 +9126,7 @@ var _user$project$Main$view = function (model) {
 							{ctor: '[]'},
 							{
 								ctor: '::',
-								_0: _elm_lang$html$Html$text('Everyone can see this'),
+								_0: _elm_lang$html$Html$text('Everyone can see this:'),
 								_1: {ctor: '[]'}
 							}),
 						_1: {

@@ -58,7 +58,7 @@ view model =
             == Off
     then
         div []
-            [ p [] [ text "Scan to allow your lab to send you results" ]
+            [ h3 [] [ text "Scan to allow your lab to send you results" ]
             , br [] []
             , img [ src "images/qrcode.jpg" ] []
             , br [] []
@@ -137,10 +137,10 @@ view model =
             == Off
     then
         div []
-            [ h2 [] [ text "Only you can see this" ]
+            [ h2 [] [ text "Only you can see this:" ]
             , fullresult
             , br [] []
-            , h2 [] [ text "Everyone can see this" ]
+            , h2 [] [ text "Everyone can see this:" ]
             , partialresult
             , i [ class "fa fa-arrow-right" ] []
             , button [ onClick PostResult ] [ text "Post" ]

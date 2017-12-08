@@ -96,7 +96,9 @@ i {
     -webkit-text-stroke: 0.1px;
   }
 
-  h1, h2, h3, h4, h5, h6, p {
+  h1, h2, h4, h5, h6, p {
+    display: inline-block;
+    width: 40%;
     color: #333;
     margin: 0 0 1em 0;
     font-family: 'Campton-BoldDEMO', sans-serif;
@@ -104,6 +106,16 @@ i {
     background-color: #E8E8E8;
     border: solid 1px #000000;
   }
+
+  h3 {
+    display: inline-block;
+    width: 100%;
+    color: #333;
+    margin: 0 0 1em 0;
+    font-family: 'Campton-BoldDEMO', sans-serif;
+    line-height: 1.5em;
+  }
+
   p {
     color: #333;
     margin: 0 0 1em 0;
@@ -177,6 +189,10 @@ i {
 	      height: 100%;
 	      width: 100%;
       }
+
+  h1, h2, h4, h5, h6, p {
+    width: 100%;
+  }
 
     /* Button */
 
