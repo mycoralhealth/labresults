@@ -9001,7 +9001,7 @@ var _user$project$Main$view = function (model) {
 				{ctor: '[]'},
 				{
 					ctor: '::',
-					_0: _elm_lang$html$Html$text('Only you can see this'),
+					_0: _elm_lang$html$Html$text('Only you can see this:'),
 					_1: {ctor: '[]'}
 				}),
 			_1: {
@@ -9020,7 +9020,7 @@ var _user$project$Main$view = function (model) {
 							{ctor: '[]'},
 							{
 								ctor: '::',
-								_0: _elm_lang$html$Html$text('Everyone can see this'),
+								_0: _elm_lang$html$Html$text('Everyone can see this:'),
 								_1: {ctor: '[]'}
 							}),
 						_1: {
@@ -10015,23 +10015,19 @@ var _user$project$Main$view = function (model) {
 				_1: {
 					ctor: '::',
 					_0: A2(
-						_elm_lang$html$Html$br,
+						_elm_lang$html$Html$h2,
 						{ctor: '[]'},
-						{ctor: '[]'}),
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html$text('Lab Result Demo'),
+							_1: {ctor: '[]'}
+						}),
 					_1: {
 						ctor: '::',
 						_0: A2(
-							_elm_lang$html$Html$button,
-							{
-								ctor: '::',
-								_0: _elm_lang$html$Html_Events$onClick(_user$project$Main$Login),
-								_1: {ctor: '[]'}
-							},
-							{
-								ctor: '::',
-								_0: _elm_lang$html$Html$text('Start'),
-								_1: {ctor: '[]'}
-							}),
+							_elm_lang$html$Html$br,
+							{ctor: '[]'},
+							{ctor: '[]'}),
 						_1: {
 							ctor: '::',
 							_0: A2(
@@ -10041,21 +10037,18 @@ var _user$project$Main$view = function (model) {
 							_1: {
 								ctor: '::',
 								_0: A2(
-									_elm_lang$html$Html$br,
-									{ctor: '[]'},
-									{ctor: '[]'}),
-								_1: {
-									ctor: '::',
-									_0: A2(
-										_elm_lang$html$Html$h2,
-										{ctor: '[]'},
-										{
-											ctor: '::',
-											_0: _elm_lang$html$Html$text('Lab Result Demo'),
-											_1: {ctor: '[]'}
-										}),
-									_1: {ctor: '[]'}
-								}
+									_elm_lang$html$Html$button,
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html_Events$onClick(_user$project$Main$Login),
+										_1: {ctor: '[]'}
+									},
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html$text('Start'),
+										_1: {ctor: '[]'}
+									}),
+								_1: {ctor: '[]'}
 							}
 						}
 					}

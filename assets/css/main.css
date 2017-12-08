@@ -12,6 +12,7 @@
 	color: #666;
 	cursor: not-allowed;
 	text-shadow: -1px -1px 0 rgba(0,0,0,0.3);
+	border-color: #666;
 }
 
 .inactive:hover {
@@ -19,22 +20,27 @@
 }
 
 body {
-
     height: 100%;
-    background: #F8F8F8;
+    background: white;
+    background-image: url("../../images/background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: white;
     font-family: 'Campton-LightDEMO', sans-serif;
     font-weight: 300;
     font-size: 17pt;
     line-height: 1.75em;
-    color: #888;
+    color: #000000;
     text-align: center;
     -webkit-text-stroke: 0.1px;
 }
 
 img {
 	text-align: center;
-	width: 50%;
-	height: 50%;
+	width: 35%;
+	height: 35%;
 }
 
 i {
@@ -65,16 +71,20 @@ i {
 /* Table */
 
   table {
-    width: 100%;
-    text-align: left;
-    border: solid 3px #e6e6e6;
+    width: 45%;
+    margin: auto;
+    text-align: center;
+    border: solid 3px #000000;
+    border-collapse: collapse;
+    background-color: white;
 
   }
 
 
-      table > tr {
-    	border: solid 2px #e6e6e6;
-      }
+  th {
+    border-collapse: collapse;
+    border: solid 2px #000000;
+  }
 
 
   select {
@@ -91,6 +101,16 @@ i {
     margin: 0 0 1em 0;
     font-family: 'Campton-BoldDEMO', sans-serif;
     line-height: 1.5em;
+    background-color: #E8E8E8;
+    border: solid 1px #000000;
+  }
+  p {
+    color: #333;
+    margin: 0 0 1em 0;
+    font-family: 'Campton-BoldDEMO', sans-serif;
+    line-height: 1.5em;
+    background-color: white;
+    border: solid 1px #000000;
   }
 
 
@@ -117,6 +137,7 @@ i {
     text-align: center;
     text-decoration: none;
     border: 2px solid white;
+    box-shadow: 0px 0px 15px #888888;
   }
 
 
@@ -136,7 +157,7 @@ i {
     input[type="reset"]:hover,
     button:hover,
     .button:hover {
-            background: grey;
+            background: #52cdcd;
     }
 /* Mobile */
 
@@ -168,7 +189,6 @@ i {
     input[type="reset"]:hover,
     button:hover,
     .button:hover {
-    	background: #1cb495;
     }
   }
 

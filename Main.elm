@@ -109,10 +109,10 @@ view model =
             == Off
     then
         div []
-            [ h2 [] [ text "Only you can see this" ]
+            [ h2 [] [ text "Only you can see this:" ]
             , fullresult
             , br [] []
-            , h2 [] [ text "Everyone can see this" ]
+            , h2 [] [ text "Everyone can see this:" ]
             , partialresult
             , button [ onClick PostResult ] [ text "Post" ]
             , br [] []
@@ -290,11 +290,10 @@ view model =
         div []
             [ img [ src "images/logo.png" ] []
             , br [] []
+            , h2 [] [ text "Lab Result Demo" ]
+            , br [] []
             , br [] []
             , button [ onClick Login ] [ text "Start" ]
-            , br [] []
-            , br [] []
-            , h2 [] [ text "Lab Result Demo" ]
             ]
 
 
