@@ -8666,7 +8666,7 @@ var _user$project$Main$view = function (model) {
 						},
 						{
 							ctor: '::',
-							_0: _elm_lang$html$Html$text('New Results'),
+							_0: _elm_lang$html$Html$text('View New Results'),
 							_1: {ctor: '[]'}
 						}),
 					_1: {
@@ -8692,7 +8692,7 @@ var _user$project$Main$view = function (model) {
 									},
 									{
 										ctor: '::',
-										_0: _elm_lang$html$Html$text('View Results'),
+										_0: _elm_lang$html$Html$text('View All Results'),
 										_1: {ctor: '[]'}
 									}),
 								_1: {
@@ -8718,7 +8718,7 @@ var _user$project$Main$view = function (model) {
 												},
 												{
 													ctor: '::',
-													_0: _elm_lang$html$Html$text('Dismissed'),
+													_0: _elm_lang$html$Html$text('View Unposted Results'),
 													_1: {ctor: '[]'}
 												}),
 											_1: {
@@ -8886,7 +8886,7 @@ var _user$project$Main$view = function (model) {
 							},
 							{
 								ctor: '::',
-								_0: _elm_lang$html$Html$text('New Results'),
+								_0: _elm_lang$html$Html$text('View New Results'),
 								_1: {ctor: '[]'}
 							}),
 						_1: {
@@ -8912,7 +8912,7 @@ var _user$project$Main$view = function (model) {
 										},
 										{
 											ctor: '::',
-											_0: _elm_lang$html$Html$text('View Results'),
+											_0: _elm_lang$html$Html$text('View All Results'),
 											_1: {ctor: '[]'}
 										}),
 									_1: {
@@ -8938,7 +8938,7 @@ var _user$project$Main$view = function (model) {
 													},
 													{
 														ctor: '::',
-														_0: _elm_lang$html$Html$text('Dismissed'),
+														_0: _elm_lang$html$Html$text('View Unposted Results'),
 														_1: {ctor: '[]'}
 													}),
 												_1: {
@@ -9001,7 +9001,7 @@ var _user$project$Main$view = function (model) {
 				{ctor: '[]'},
 				{
 					ctor: '::',
-					_0: _elm_lang$html$Html$text('Only you can see this:'),
+					_0: _elm_lang$html$Html$text('Your lab results'),
 					_1: {ctor: '[]'}
 				}),
 			_1: {
@@ -9020,7 +9020,7 @@ var _user$project$Main$view = function (model) {
 							{ctor: '[]'},
 							{
 								ctor: '::',
-								_0: _elm_lang$html$Html$text('Everyone can see this:'),
+								_0: _elm_lang$html$Html$text('Information that would be posted'),
 								_1: {ctor: '[]'}
 							}),
 						_1: {
@@ -9107,7 +9107,7 @@ var _user$project$Main$view = function (model) {
 				{ctor: '[]'},
 				{
 					ctor: '::',
-					_0: _elm_lang$html$Html$text('Only you can see this:'),
+					_0: _elm_lang$html$Html$text('Your lab results'),
 					_1: {ctor: '[]'}
 				}),
 			_1: {
@@ -9126,7 +9126,7 @@ var _user$project$Main$view = function (model) {
 							{ctor: '[]'},
 							{
 								ctor: '::',
-								_0: _elm_lang$html$Html$text('Everyone can see this:'),
+								_0: _elm_lang$html$Html$text('Information that would be posted'),
 								_1: {ctor: '[]'}
 							}),
 						_1: {
@@ -9244,7 +9244,7 @@ var _user$project$Main$view = function (model) {
 						},
 						{
 							ctor: '::',
-							_0: _elm_lang$html$Html$text('New Results'),
+							_0: _elm_lang$html$Html$text('View New Results'),
 							_1: {ctor: '[]'}
 						}),
 					_1: {
@@ -9270,7 +9270,7 @@ var _user$project$Main$view = function (model) {
 									},
 									{
 										ctor: '::',
-										_0: _elm_lang$html$Html$text('View Results'),
+										_0: _elm_lang$html$Html$text('View All Results'),
 										_1: {ctor: '[]'}
 									}),
 								_1: {
@@ -9306,7 +9306,7 @@ var _user$project$Main$view = function (model) {
 													},
 													{
 														ctor: '::',
-														_0: _elm_lang$html$Html$text('Dismissed'),
+														_0: _elm_lang$html$Html$text('View Unposted Results'),
 														_1: {ctor: '[]'}
 													}),
 												_1: {
@@ -9400,7 +9400,7 @@ var _user$project$Main$view = function (model) {
 						},
 						{
 							ctor: '::',
-							_0: _elm_lang$html$Html$text('New Results'),
+							_0: _elm_lang$html$Html$text('View New Results'),
 							_1: {ctor: '[]'}
 						}),
 					_1: {
@@ -9436,7 +9436,7 @@ var _user$project$Main$view = function (model) {
 										},
 										{
 											ctor: '::',
-											_0: _elm_lang$html$Html$text('View Results'),
+											_0: _elm_lang$html$Html$text('View All Results'),
 											_1: {ctor: '[]'}
 										}),
 									_1: {
@@ -9462,7 +9462,7 @@ var _user$project$Main$view = function (model) {
 													},
 													{
 														ctor: '::',
-														_0: _elm_lang$html$Html$text('Dismissed'),
+														_0: _elm_lang$html$Html$text('View Unposted Results'),
 														_1: {ctor: '[]'}
 													}),
 												_1: {
@@ -9556,7 +9556,7 @@ var _user$project$Main$view = function (model) {
 						},
 						{
 							ctor: '::',
-							_0: _elm_lang$html$Html$text('New Results'),
+							_0: _elm_lang$html$Html$text('View New Results'),
 							_1: {ctor: '[]'}
 						}),
 					_1: {
@@ -9582,7 +9582,7 @@ var _user$project$Main$view = function (model) {
 									},
 									{
 										ctor: '::',
-										_0: _elm_lang$html$Html$text('View Results'),
+										_0: _elm_lang$html$Html$text('View All Results'),
 										_1: {ctor: '[]'}
 									}),
 								_1: {
@@ -9608,7 +9608,7 @@ var _user$project$Main$view = function (model) {
 												},
 												{
 													ctor: '::',
-													_0: _elm_lang$html$Html$text('Dismissed'),
+													_0: _elm_lang$html$Html$text('View Unposted Results'),
 													_1: {ctor: '[]'}
 												}),
 											_1: {

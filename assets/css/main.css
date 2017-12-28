@@ -96,7 +96,7 @@ i {
     -webkit-text-stroke: 0.1px;
   }
 
-  h1, h2, h4, h5, h6, p {
+  h1, h4, h5, h6, p {
     display: inline-block;
     width: 40%;
     color: #333;
@@ -145,7 +145,7 @@ i {
     border-radius: 0.25em;
     cursor: pointer;
     color: #fff;
-    font-size: 20px;
+    font-size: 14px;
     text-align: center;
     text-decoration: none;
     border: 2px solid white;
