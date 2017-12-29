@@ -296,7 +296,7 @@ view model =
             , button [ onClick Login ] [ text "Start" ]
             , br [] []
             , br [] []
-            , iframe [ height 315, width 315, src "https://www.youtube.com/embed/WwzbQxaswRk" ] []
+            , iframe [ height 315, width 300, src "https://www.youtube.com/embed/WwzbQxaswRk" ] []
             ]
 
 
