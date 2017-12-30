@@ -10066,19 +10066,11 @@ var _user$project$Main$view = function (model) {
 												_elm_lang$html$Html$iframe,
 												{
 													ctor: '::',
-													_0: _elm_lang$html$Html_Attributes$height(315),
+													_0: A2(_elm_lang$html$Html_Attributes$attribute, 'allowfullscreen', 'true'),
 													_1: {
 														ctor: '::',
-														_0: _elm_lang$html$Html_Attributes$width(300),
-														_1: {
-															ctor: '::',
-															_0: A2(_elm_lang$html$Html_Attributes$attribute, 'allowfullscreen', 'true'),
-															_1: {
-																ctor: '::',
-																_0: _elm_lang$html$Html_Attributes$src('https://www.youtube.com/embed/WwzbQxaswRk'),
-																_1: {ctor: '[]'}
-															}
-														}
+														_0: _elm_lang$html$Html_Attributes$src('https://www.youtube.com/embed/WwzbQxaswRk'),
+														_1: {ctor: '[]'}
 													}
 												},
 												{ctor: '[]'}),
