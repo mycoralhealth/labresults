@@ -49,6 +49,11 @@ i {
 	-webkit-animation: bounce 0.5s 10 alternate;
 }
 
+iframe {
+	height: 315px;
+	width: 560px;
+}
+
 @keyframes bounce {
   from {
     transform: translateY(0px);
@@ -189,6 +194,10 @@ i {
 	      height: 100%;
 	      width: 100%;
       }
+iframe {
+	height: 315px;
+	width: 300px;
+}
 
   h1, h2, h4, h5, h6, p {
     width: 100%;
