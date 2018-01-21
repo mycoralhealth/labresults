@@ -1801,17 +1801,25 @@ var _user$project$Main$view = function (model) {
 										_1: {
 											ctor: '::',
 											_0: A2(
-												_elm_lang$html$Html$iframe,
+												_elm_lang$html$Html$a,
 												{
 													ctor: '::',
-													_0: A2(_elm_lang$html$Html_Attributes$attribute, 'allowfullscreen', 'true'),
+													_0: _elm_lang$html$Html_Attributes$href('https://www.youtube.com/watch?v=WwzbQxaswRk'),
 													_1: {
 														ctor: '::',
-														_0: _elm_lang$html$Html_Attributes$src('https://www.youtube.com/embed/WwzbQxaswRk'),
-														_1: {ctor: '[]'}
+														_0: _elm_lang$html$Html_Attributes$target('_blank'),
+														_1: {
+															ctor: '::',
+															_0: _elm_lang$html$Html_Attributes$class('button'),
+															_1: {ctor: '[]'}
+														}
 													}
 												},
-												{ctor: '[]'}),
+												{
+													ctor: '::',
+													_0: _elm_lang$html$Html$text('Tutorial'),
+													_1: {ctor: '[]'}
+												}),
 											_1: {ctor: '[]'}
 										}
 									}

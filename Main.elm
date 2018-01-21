@@ -296,7 +296,7 @@ view model =
             , button [ onClick Login ] [ text "Start" ]
             , br [] []
             , br [] []
-            , iframe [ attribute "allowfullscreen" "true", src "https://www.youtube.com/embed/WwzbQxaswRk" ] []
+            , a [ href "https://www.youtube.com/watch?v=WwzbQxaswRk", target "_blank", class "button" ] [ text "Tutorial" ]
             ]
 
 
